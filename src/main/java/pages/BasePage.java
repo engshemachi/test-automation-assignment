@@ -72,4 +72,10 @@ public void modalActionsToClick(By elementLocator) {
     locateElement(elementLocator).click();
     driver.switchTo().defaultContent();
 }
+    public void scrollVertically (int deltaY)
+    {
+        Actions actions = new Actions(driver);
+        actions.scrollByAmount(0, deltaY).perform();
+
+    }
 }

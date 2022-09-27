@@ -21,9 +21,9 @@ public class BaseTests {
     public void setupWebpage() {
 
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--headless");
+        driver = new ChromeDriver();
         driver.get(getPropertyByKey("configurationData.properties", "APP_URL"));
     }
 
