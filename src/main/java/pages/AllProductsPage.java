@@ -53,6 +53,7 @@ public class AllProductsPage extends BasePage {
     }
 
     public void hoverAndClickOnAddToCart() {
+        scrollVertically(600);
         hoverAndClickOnElements(addFirstElementToCartBtn);
         modalActionsToClick(continueShoppingBtn);
         hoverAndClickOnElements(addSecondElementToCartBtn);
