@@ -11,12 +11,11 @@ public class AddToCartTests extends BaseTests {
     NavigationBarPage navigationBarPage;
     AllProductsPage allProductsPage;
     ViewCartPage viewCartPage;
-
     HomePage homePage;
 
     //Add Elements to cart and check their visibility in cart
 
-    @Test (priority = 1)
+    @Test
     public void testAddElementsToCart () {
         homePage = new HomePage(driver);
         Assert.assertTrue(homePage.isHomePageDispalyed());
@@ -26,11 +25,9 @@ public class AddToCartTests extends BaseTests {
         viewCartPage = navigationBarPage.clickOnCartBtn();
         Assert.assertTrue(viewCartPage.checkFirstItemAddedToCart(),"Test should return True if item is added to cart");
         Assert.assertTrue(viewCartPage.checkSecondItemAddedToCart(),"Test should return True if item is added to cart");
-    }
-    @Test (priority = 2)
-    public void testDataOfItemsInCart (){
 
-        //Validate price, quantity and total price of items
+        //Validate data of items added to cart (price, quantity and total price of items)
+
         Assert.assertEquals(viewCartPage.getFirstItemPrice(),"Rs. 500","The 1st item price is wrong");
         Assert.assertEquals(viewCartPage.getSecondItemPrice(),"Rs. 400","The 2nd item price is wrong");
         Assert.assertEquals(viewCartPage.getFirstItemQuantity(),"1","Quantity should be 1");

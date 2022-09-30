@@ -11,13 +11,10 @@ public class ViewCartPage extends BasePage {
     //Locators
     private By firstItemInCart = By.id("product-1");
     private By secondItemInCart = By.id("product-2");
-    private By firstItemPrice = By.xpath("(//tr/td/p)[2]");
-    private By secondItemPrice = By.xpath("(//tr/td/p)[5]");
-    private By firstItemQuantity = By.xpath("(//button[@class=\"disabled\"])[1]");
-    private By secondItemQuantity = By.xpath("(//button[@class=\"disabled\"])[2]");
-    private By firstItemTotalPrice = By.xpath("(//tr/td/p)[3]");
-    private By secondItemTotalPrice = By.xpath("(//tr/td/p)[6]");
-
+    private By firstItemPrice = By.xpath("(//td[@class=\"cart_price\"]/p)[1]");
+    private By secondItemPrice = By.xpath("(//td[@class=\"cart_price\"]/p)[2]");
+    private By itemsTotalPrice = By.className("cart_total_price");
+    private By itemsQuantity = By.cssSelector("button.disabled");
 
     //Operations
 
@@ -40,18 +37,18 @@ public class ViewCartPage extends BasePage {
     }
 
     public String getFirstItemQuantity() {
-        return getTextOfWebElement(firstItemQuantity);
+        return getTextOfElementInArray(itemsQuantity,0);
     }
 
     public String getSecondItemQuantity() {
-        return getTextOfWebElement(secondItemQuantity);
+        return getTextOfElementInArray(itemsQuantity,1);
     }
 
     public String getFirstItemTotalPrice() {
-        return getTextOfWebElement(firstItemTotalPrice);
+        return getTextOfElementInArray(itemsTotalPrice,0);
     }
 
     public String getSecondItemTotalPrice() {
-        return getTextOfWebElement(secondItemTotalPrice);
+        return getTextOfElementInArray(itemsTotalPrice,1);
     }
 }

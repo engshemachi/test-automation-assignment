@@ -14,7 +14,7 @@ import static fileReaderManager.ReadFromFiles.getPropertyByKey;
 
 public class BaseTests {
 
-    public static String configPropertyFileName = "configData.properties";
+    public static String configPropertyFileName = "configurationData.properties";
     WebDriver driver;
 
     @BeforeMethod
@@ -24,7 +24,7 @@ public class BaseTests {
         //ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless");
         driver = new ChromeDriver();
-        driver.get(getPropertyByKey("configurationData.properties", "APP_URL"));
+        driver.get(getPropertyByKey(configPropertyFileName, "APP_URL"));
     }
 
     @AfterClass

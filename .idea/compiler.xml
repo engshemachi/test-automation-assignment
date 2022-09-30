@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Automation_exercise_assignment" />
         <module name="add-to-cart-edit" />
+        <module name="test-automation-assign-edit-version" />
       </profile>
     </annotationProcessing>
   </component>

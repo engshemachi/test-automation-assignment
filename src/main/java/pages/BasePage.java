@@ -53,6 +53,12 @@ return locateElement(elementLocator).getText();
 
 }
 
+    public String getTextOfElementInArray(By elementLocator , int index ){
+
+        return locateElements(elementLocator).get(index).getText();
+
+    }
+
 public void hoverOnElements (By elementLocator){
     Actions actions = new Actions(driver);
     actions.moveToElement(locateElement(elementLocator));
