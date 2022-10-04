@@ -44,12 +44,11 @@ public class AllProductsPage extends BasePage {
 
         for (int i = 0; i < numberOfSearchedItems; i++) {
             String searchedProductName = productsTitles.get(i).getText();
-            if (searchedProductName.contains(searchedKeyWord)) {
-                return true;
-                //break;
+            if (searchedProductName.contains(searchedKeyWord)==false) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public void hoverAndClickOnAddToCart() {
